@@ -1,0 +1,28 @@
+{
+  "name": "heartbeat",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "ts-node src/controller/index.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "heartbeat"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "node-fetch": "^2.6.0",
+    "socket.io": "^1.7.4",
+    "socket.io-client": "^2.2.0",
+    "ts-node": "^8.2.0",
+    "typescript": "^3.5.3",
+    "uuid": "^3.3.2"
+  },
+  "devDependencies": {
+    "@types/node-fetch": "^2.5.0",
+    "@types/socket.io": "^2.1.2",
+    "@types/socket.io-client": "^1.4.32"
+  }
+}
