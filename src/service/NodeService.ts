@@ -1,8 +1,7 @@
 import data from './../data/config.json';
 import NodeRepository from './../repository/NodeRepository';
 import { Node, NodeInfo } from './../model/node';
-import Socket from './../driver/socket';
-
+import { server } from './../driver/socket';
 
 class NodeService {
 
@@ -26,7 +25,7 @@ class NodeService {
 
     update() {
          const nodes = this.getAllNodes();
-         Socket.send(nodes);
+         server.getSocket().send(nodes);
     }
 }
 

@@ -24,7 +24,7 @@ export class Node {
     constructor(data: Address) {
         this.ip = data.ip;
         this.name = data.name;
-        this.status = StatusType.CRITICAL;
+        this.status = StatusType.DOWN;
         this.lastTimeUpdate = 0;
         this._connect();
         this._startWarningTimer();
@@ -42,13 +42,13 @@ export class Node {
         this.warningTimerId = setTimeout(() => {
             this.status = StatusType.WARNING;
             this._startCriticalTimer();
-        }, ThresholdType.THRESHOLD_WARNING);
+        }, ThresholdType.WARNING);
     }
 
     private _startCriticalTimer() {
         this.criticalTimerId = setTimeout(() => {
             this.status = StatusType.CRITICAL;
-        }, ThresholdType.THRESHOLD_CRITICAL);
+        }, ThresholdType.CRITICAL);
     }
 
     private _resetTimers() {
@@ -60,9 +60,9 @@ export class Node {
     private _update() {
         const currentTime = new Date().getTime();
         this._resetTimers();
-        if (this.lastTimeUpdate + ThresholdType.THRESHOLD_WARNING + ThresholdType.THRESHOLD_CRITICAL < currentTime) {
+        if (this.lastTimeUpdate + ThresholdType.WARNING + ThresholdType.CRITICAL < currentTime) {
             this.status = StatusType.CRITICAL;
-        } else if (this.lastTimeUpdate + ThresholdType.THRESHOLD_WARNING < currentTime) {
+        } else if (this.lastTimeUpdate + ThresholdType.WARNING < currentTime) {
             this.status = StatusType.WARNING;
         } else {
             this.status = StatusType.UP;

@@ -1,6 +1,4 @@
-export const DEFAULT_PORT = 7008;
-const DEFAULT_SYSTEM_SOCKET_CHANNEL = 'SYSTEM_HEALTH';
-export const SYSTEM_HEALTH_SOCKET_CHANNEL = process.env.SYSTEM_HEALTH_SOCKET_CHANNEL || DEFAULT_SYSTEM_SOCKET_CHANNEL;
+export const DEFAULT_PORT = Number(process.env.DEFAULT_PORT) || 7008;
 import { ServerOptions } from 'socket.io';
 
 export const API_SOCKET_SERVER_CONFIG: ServerOptions = {

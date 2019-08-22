@@ -13,6 +13,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "eska-common": "^1.0.4",
     "node-fetch": "^2.6.0",
     "node-schedule": "^1.3.2",
     "socket.io": "^2.2.0",

@@ -7,8 +7,6 @@ export enum StatusType {
     DOWN = 'down'
 }
 export enum ThresholdType {
-    THRESHOLD_WARNING = 5000,
-    THRESHOLD_CRITICAL = 5000
+    WARNING = 5000,
+    CRITICAL = 5000
 }
-
-
